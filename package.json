@@ -1,0 +1,16 @@
+{
+  "name": "checkout-page-master",
+  "version": "1.0.0",
+  "description": "Checkout Page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "yarn start",
+    "start": "servor src index.html 5500 --reload --browse --static"
+  },
+  "keywords": [],
+  "author": "Brando Vidal",
+  "license": "ISC",
+  "devDependencies": {
+    "servor": "^4.0.2"
+  }
+}

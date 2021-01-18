@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+/**** Styles ****/
+:root {
+  --color-default: #4e5150;
+  --color-primary: #4f4f4f;
+  --color-dark: #333;
+  --color-muted: #828282;
+  --color-footer: #a9a9a9;
+
+  --color-orange: #f2994a;
+
+  --bg-default: var(--color-orange);
+  --bg-secondary: #e0e0e0;
+  --bg-white: #f2f2f2;
+
+  --font-default: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-default);
+  color: var(--color-default);
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+button {
+  background: var(--bg-default);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 45px;
+}
+button.secondary {
+  background: var(--bg-secondary);
+  color: var(--color-dark);
+  border: none;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 1.35rem;
+}
+
+/**** Container ****/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh 15vw;
+}
+
+/**** main ****/
+.container main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/**** Checkout ****/
+.container .checkout .info .title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-dark);
+}
+.container .checkout .info .group label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--color-primary);
+}
+.container .checkout .info .group input::placeholder {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--color-muted);
+}
+.container .checkout .terms label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--color-primary);
+}
+
+/**** Cart ****/
+.container .cart {
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+.container .cart .list {
+  margin-bottom: 50px;
+}
+.container .cart .list .item {
+  display: flex;
+  margin-bottom: 25px;
+}
+.container .cart .list .item picture {
+  min-width: 130px;
+  width: 130px;
+  /* padding: 0 15px; */
+  margin-right: 15px;
+}
+.container .cart .list .item picture img {
+  border-radius: 12px;
+}
+.container .cart .list .item .product {
+  /* width: 100%; */
+}
+.container .cart .list .item .product .name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--color-default);
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+.container .cart .list .item .product .price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.container .cart .list .item .product .price .ofert {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-orange);
+  margin-right: 15px;
+}
+.container .cart .list .item .product .price .real {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration: line-through;
+  color: var(--color-default);
+}
+.container .cart .list .item .product .quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--color-dark);
+  border-radius: 12px;
+  padding: 15px 10px;
+  min-width: 120px;
+}
+.container .cart .list .item .product .quantity .counter {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-dark);
+}
+
+/**** Resumen ****/
+.container .cart .resumen {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-dark);
+}
+.container .cart .resumen .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 1px solid var(--color-footer);
+}
+
+/**** Footer ****/
+.footer {
+  position: static;
+  bottom: 0;
+  font-family: var(--font-default);
+  color: var(--color-footer);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 5vh 5vw;
+  }
+}

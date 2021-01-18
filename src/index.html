@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+    <link rel="icon" href="devchallenges.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://devchallenges.io/"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="title">Checkout</h1>
+      <main>
+        <form class="checkout">
+          <div class="info">
+            <h3 class="title">Contact infomation</h3>
+            <div class="group">
+              <label for="txtEmail">E-mail</label>
+              <div class="control">
+                <i></i>
+                <input
+                  id="txtEmail"
+                  type="text"
+                  placeholder="Enter your email..."
+                />
+              </div>
+            </div>
+            <div class="group">
+              <label for="txtPhone">Phone</label>
+              <div class="control">
+                <i></i>
+                <input
+                  id="txtPhone"
+                  type="text"
+                  placeholder="Enter your phone..."
+                />
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <h3 class="title">Shipping address</h3>
+            <div class="group">
+              <label for="txtName">Full name</label>
+              <div class="control">
+                <i></i>
+                <input id="txtName" type="text" placeholder="Rodney Cotton" />
+              </div>
+            </div>
+            <div class="group">
+              <label for="txtAddress">Your address..</label>
+              <div class="control">
+                <i></i>
+                <input
+                  id="txtAddress"
+                  type="tel"
+                  placeholder="Your address.."
+                />
+              </div>
+            </div>
+            <div class="group">
+              <label for="txtCity">City</label>
+              <div class="control">
+                <i></i>
+                <input id="txtCity" type="text" placeholder="Your city.." />
+              </div>
+            </div>
+            <div class="full">
+              <div class="group">
+                <label for="selCountry">Country</label>
+                <div class="control">
+                  <i></i>
+                  <select
+                    name="selCountry"
+                    id="selCountry"
+                    placeholder="Your country.."
+                  >
+                    <option value="all">Todos</option>
+                    <option value="all">Per&uacute;</option>
+                  </select>
+                </div>
+              </div>
+              <div class="group">
+                <label for="txtPostal">Postal code</label>
+                <div class="control">
+                  <i></i>
+                  <input
+                    id="txtPostal"
+                    type="tel"
+                    placeholder="Your postal code.."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="full terms">
+              <input type="checkbox" id="chkSave">
+              <label>Save this information for next time</label>
+            </div>
+            <div class="full">
+              <button>Continue</button>
+            </div>
+          </div>
+        </form>
+        <article class="cart">
+          <div class="list">
+            <div class="item">
+              <picture>
+                <img src="./photo1.png" alt="Vintage Backbag">
+              </picture>
+              <div class="product">
+                <div class="name">Vintage Backbag</div>
+                <div class="price">
+                  <div class="ofert">$54.99</div>
+                  <div class="real">$94.99</div>
+                </div>
+                <div class="quantity">
+                  <button class="secondary">-</button>
+                  <div class="counter">1</div>
+                  <button class="secondary">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <picture>
+                <img src="./photo2.png" alt="Levi Shoes">
+              </picture>
+              <div class="product">
+                <div class="name">Levi Shoes</div>
+                <div class="price">
+                  <div class="ofert">$74.99</div>
+                  <div class="real">$124.99</div>
+                </div>
+                <div class="quantity">
+                  <button class="secondary">-</button>
+                  <div class="counter">1</div>
+                  <button class="secondary">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="resumen">
+            <div class="item shipping">
+              <label>Shipping</label>
+              <div class="cost">$19</div>
+            </div>
+            <div class="item total">
+              <label>Total</label>
+              <div class="cost">$148.98</div>
+            </div>
+          </div>
+        </article>
+      </main>
+      <footer class="footer">Brando Vidal @ DevChallenges.io</footer>
+    </section>
+  </body>
+</html>
