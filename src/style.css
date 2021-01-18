@@ -7,7 +7,6 @@
   --color-dark: #333;
   --color-muted: #828282;
   --color-footer: #a9a9a9;
-
   --color-orange: #f2994a;
 
   --bg-default: var(--color-orange);
@@ -47,7 +46,11 @@ li {
 img {
   width: 100%;
 }
-
+input[type="checkbox"] {
+  border: 1px solid var(--color-muted);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
 button {
   background: var(--bg-default);
   color: white;
@@ -61,7 +64,21 @@ button.secondary {
   border: none;
   border-radius: 4px;
   padding: 0 6px;
-  font-size: 1.35rem;
+  /* font-size: 1.35rem; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+.full {
+  display: flex;
+  align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.padding-right {
+  padding-right: 24px;
 }
 
 /**** Container ****/
@@ -71,20 +88,41 @@ button.secondary {
   justify-content: center;
   padding: 5vh 15vw;
 }
+.container .title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: var(--color-default);
+  margin-bottom: 20px;
+}
 
 /**** main ****/
 .container main {
   display: flex;
   flex-direction: column-reverse;
+  margin-bottom: 50px;
 }
 
 /**** Checkout ****/
+.container .checkout .info {
+  margin-bottom: 45px;
+}
 .container .checkout .info .title {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
   color: var(--color-dark);
+  margin-bottom: 11px;
+}
+.container .checkout .info .group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 15px;
 }
 .container .checkout .info .group label {
   font-style: normal;
@@ -92,6 +130,17 @@ button.secondary {
   font-size: 10px;
   line-height: 12px;
   color: var(--color-primary);
+  margin-bottom: 5px;
+}
+.container .checkout .info .group .control input,
+.container .checkout .info .group .control select {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--color-muted);
+  border-radius: 12px;
+  padding: 14px 12px;
+  transition: 300ms all ease-in;
+  box-shadow: 1px 2px 2px var(--bg-secondary);
 }
 .container .checkout .info .group input::placeholder {
   font-style: normal;
@@ -99,6 +148,12 @@ button.secondary {
   font-size: 12px;
   line-height: 15px;
   color: var(--color-muted);
+}
+.container .checkout .info .group input:focus,
+.container .checkout .info .group select:focus {
+  outline: var(--color-muted) auto 1px;
+  outline: none;
+  box-shadow: 5px 5px 5px var(--bg-secondary);
 }
 .container .checkout .terms label {
   font-style: normal;
@@ -131,9 +186,9 @@ button.secondary {
 .container .cart .list .item picture img {
   border-radius: 12px;
 }
-.container .cart .list .item .product {
-  /* width: 100%; */
-}
+/* .container .cart .list .item .product {
+  width: 100%;
+} */
 .container .cart .list .item .product .name {
   font-style: normal;
   font-weight: 600;
