@@ -51,6 +51,12 @@ input[type="checkbox"] {
   box-sizing: border-box;
   border-radius: 4px;
 }
+small {
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 5px;
+  transition: 300ms all ease;
+}
 button {
   background: var(--bg-default);
   color: white;
@@ -85,6 +91,9 @@ button:focus {
 }
 .padding-right {
   padding-right: 24px;
+}
+.text-danger {
+  color: var(--color-orange);
 }
 
 /**** Container ****/

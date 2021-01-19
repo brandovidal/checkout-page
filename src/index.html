@@ -24,13 +24,18 @@
     <section class="container">
       <h1 class="title">Checkout</h1>
       <main>
-        <form class="checkout">
+        <form
+          id="formCheckout"
+          name="formCheckout"
+          class="checkout"
+          validate="none"
+        >
           <div class="info">
             <h3 class="title">Contact infomation</h3>
             <div class="group">
               <label for="txtEmail">E-mail</label>
               <div class="control">
-                <img class="icon" src="./assets/icons/email.svg" alt="Email">
+                <img class="icon" src="./assets/icons/email.svg" alt="Email" />
                 <input
                   id="txtEmail"
                   type="email"
@@ -38,18 +43,23 @@
                   placeholder="Enter your email..."
                 />
               </div>
+              <small class="text-danger" id="errorEmail"></small>
             </div>
             <div class="group">
               <label for="txtPhone">Phone</label>
               <div class="control">
-                <img class="icon" src="./assets/icons/phone.svg" alt="Email">
+                <img class="icon" src="./assets/icons/phone.svg" alt="Email" />
                 <input
                   id="txtPhone"
                   type="tel"
+                  minlength="1"
+                  maxlength="12"
                   autocomplete="new-password"
                   placeholder="Enter your phone..."
+                  oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
                 />
               </div>
+              <small class="text-danger" id="errorPhone"></small>
             </div>
           </div>
           <div class="info">
@@ -57,7 +67,7 @@
             <div class="group">
               <label for="txtName">Full name</label>
               <div class="control">
-                <img class="icon" src="./assets/icons/user.svg" alt="Email">
+                <img class="icon" src="./assets/icons/user.svg" alt="Email" />
                 <input
                   id="txtName"
                   type="text"
@@ -65,11 +75,12 @@
                   placeholder="Rodney Cotton"
                 />
               </div>
+              <small class="text-danger" id="errorName"></small>
             </div>
             <div class="group">
               <label for="txtAddress">Your address..</label>
               <div class="control">
-                <img class="icon" src="./assets/icons/home.svg" alt="Email">
+                <img class="icon" src="./assets/icons/home.svg" alt="Email" />
                 <input
                   id="txtAddress"
                   type="text"
@@ -77,11 +88,12 @@
                   placeholder="Your address.."
                 />
               </div>
+              <small class="text-danger" id="errorAddress"></small>
             </div>
             <div class="group">
               <label for="txtCity">City</label>
               <div class="control">
-                <img class="icon" src="./assets/icons/city.svg" alt="Email">
+                <img class="icon" src="./assets/icons/city.svg" alt="Email" />
                 <input
                   id="txtCity"
                   type="text"
@@ -89,25 +101,31 @@
                   placeholder="Your city.."
                 />
               </div>
+              <small class="text-danger" id="errorCity"></small>
             </div>
             <div class="full">
               <div class="group padding-right">
                 <label for="selCountry">Country</label>
                 <div class="control">
-                  <img class="icon" src="./assets/icons/city.svg" alt="Email">
+                  <img class="icon" src="./assets/icons/city.svg" alt="Email" />
                   <select
                     name="selCountry"
                     id="selCountry"
                     placeholder="Your country.."
                   >
-                    <option value="all">Your country..</option>
+                    <option value="">Your country..</option>
                   </select>
                 </div>
+                <small class="text-danger" id="errorCountry"></small>
               </div>
               <div class="group">
                 <label for="txtPostal">Postal code</label>
                 <div class="control">
-                  <img class="icon" src="./assets/icons/folder.svg" alt="Email">
+                  <img
+                    class="icon"
+                    src="./assets/icons/folder.svg"
+                    alt="Email"
+                  />
                   <input
                     id="txtPostal"
                     type="tel"
@@ -115,6 +133,7 @@
                     placeholder="Your postal code.."
                   />
                 </div>
+                <small class="text-danger" id="errorPostal"></small>
               </div>
             </div>
             <div class="full group">
@@ -124,7 +143,7 @@
               </div>
             </div>
             <div class="full justify-end">
-              <button>Continue</button>
+              <button type="submit">Continue</button>
             </div>
           </div>
         </form>
@@ -141,9 +160,9 @@
                   <div class="real">$94.99</div>
                 </div>
                 <div class="quantity">
-                  <button class="secondary">-</button>
+                  <button type="button" class="secondary">-</button>
                   <div class="counter">1</div>
-                  <button class="secondary">+</button>
+                  <button type="button" class="secondary">+</button>
                 </div>
               </div>
             </div>
@@ -158,9 +177,9 @@
                   <div class="real">$124.99</div>
                 </div>
                 <div class="quantity">
-                  <button class="secondary">-</button>
+                  <button type="button" class="secondary">-</button>
                   <div class="counter">1</div>
-                  <button class="secondary">+</button>
+                  <button type="button" class="secondary">+</button>
                 </div>
               </div>
             </div>
