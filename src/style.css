@@ -64,11 +64,17 @@ button.secondary {
   border: none;
   border-radius: 4px;
   padding: 0 6px;
-  /* font-size: 1.35rem; */
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
+}
+button:hover {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  filter: brightness(0.9);
 }
 .full {
   display: flex;
@@ -91,31 +97,35 @@ button.secondary {
 .container .title {
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-
+  font-size: 36px;
+  line-height: 44px;
   color: var(--color-default);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  transition: 300ms all ease-in;
 }
 
-/**** main ****/
+/**** Main ****/
 .container main {
   display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 50px;
+  flex-direction: row;
+  margin-bottom: 150px;
 }
 
 /**** Checkout ****/
+.container .checkout {
+  margin-right: 5vw;
+}
 .container .checkout .info {
-  margin-bottom: 45px;
+  margin-bottom: 58px;
 }
 .container .checkout .info .title {
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 18px;
+  line-height: 22px;
   color: var(--color-dark);
-  margin-bottom: 11px;
+  margin-bottom: 14px;
+  transition: 300ms all ease-in;
 }
 .container .checkout .info .group {
   display: flex;
@@ -125,12 +135,27 @@ button.secondary {
   margin-bottom: 15px;
 }
 .container .checkout .info .group label {
+  position: relative;
   font-style: normal;
   font-weight: 600;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 15px;
   color: var(--color-primary);
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+  transition: 300ms all ease-in;
+}
+
+/**** Control ****/
+.container .checkout .info .group .control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: 400ms all ease;
+}
+.container .checkout .info .group .control .icon {
+  position: absolute;
+  width: 20px;
+  margin-left: 14px;
 }
 .container .checkout .info .group .control input,
 .container .checkout .info .group .control select {
@@ -138,15 +163,16 @@ button.secondary {
   background: transparent;
   border: 1px solid var(--color-muted);
   border-radius: 12px;
-  padding: 14px 12px;
+  padding: 14px 12px 14px 50px;
   transition: 300ms all ease-in;
   box-shadow: 1px 2px 2px var(--bg-secondary);
 }
-.container .checkout .info .group input::placeholder {
+.container .checkout .info .group input::placeholder,
+.container .checkout .info .group select {
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 16px;
+  line-height: 20px;
   color: var(--color-muted);
 }
 .container .checkout .info .group input:focus,
@@ -158,8 +184,8 @@ button.secondary {
 .container .checkout .terms label {
   font-style: normal;
   font-weight: 600;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 15px;
   color: var(--color-primary);
 }
 
@@ -169,9 +195,10 @@ button.secondary {
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 40px;
+  height: fit-content;
 }
 .container .cart .list {
-  margin-bottom: 50px;
+  margin-bottom: 90px;
 }
 .container .cart .list .item {
   display: flex;
@@ -180,55 +207,57 @@ button.secondary {
 .container .cart .list .item picture {
   min-width: 130px;
   width: 130px;
-  /* padding: 0 15px; */
   margin-right: 15px;
+  transition: 300ms all ease-in;
 }
-.container .cart .list .item picture img {
+.container .cart picture img {
   border-radius: 12px;
 }
-/* .container .cart .list .item .product {
-  width: 100%;
-} */
-.container .cart .list .item .product .name {
+
+/**** Product ****/
+.container .cart .product {
+  transition: 300ms all ease-in;
+}
+.container .cart .product > .name {
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 16px;
+  line-height: 20px;
   color: var(--color-default);
   white-space: nowrap;
   margin-bottom: 10px;
 }
-.container .cart .list .item .product .price {
+.container .cart .product .price {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 }
-.container .cart .list .item .product .price .ofert {
+.container .cart .product .price > .ofert {
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 16px;
+  line-height: 20px;
   color: var(--color-orange);
   margin-right: 15px;
 }
-.container .cart .list .item .product .price .real {
+.container .cart .product .price > .real {
   font-style: normal;
   font-weight: 600;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 15px;
   text-decoration: line-through;
   color: var(--color-default);
 }
-.container .cart .list .item .product .quantity {
+.container .cart .product .quantity {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--color-dark);
   border-radius: 12px;
   padding: 15px 10px;
-  min-width: 120px;
+  min-width: 140px;
 }
-.container .cart .list .item .product .quantity .counter {
+.container .cart .product .quantity > .counter {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -240,8 +269,8 @@ button.secondary {
 .container .cart .resumen {
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 18px;
+  line-height: 22px;
   color: var(--color-dark);
 }
 .container .cart .resumen .item {
@@ -267,8 +296,88 @@ button.secondary {
   -moz-user-select: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  /**** Container ****/
   .container {
-    padding: 5vh 5vw;
+    padding: 5vh 2.5vw;
+  }
+  .container .title {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+  }
+
+  /**** Main ****/
+  .container main {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 50px;
+  }
+
+  /**** Checkout ****/
+  .container .checkout .info {
+    margin-bottom: 45px;
+  }
+  .container .checkout .info .title {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 11px;
+  }
+  .container .checkout .info .group {
+    margin-bottom: 20px;
+  }
+  .container .checkout .info .group label {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 5px;
+  }
+
+  .container .checkout .info .group .control .icon {
+    position: absolute;
+    width: 15px;
+    margin-left: 12px;
+  }
+
+  .container .checkout .info .group .control input,
+  .container .checkout .info .group .control select {
+    box-shadow: 1px 2px 2px var(--bg-secondary);
+  }
+  .container .checkout .info .group input::placeholder,
+  .container .checkout .info .group select {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .container .checkout .terms label {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  /**** Cart ****/
+  .container .cart .list {
+    margin-bottom: 50px;
+  }
+  .container .cart .product .name {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 10px;
+  }
+  .container .cart .product .price > .ofert {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .container .cart .product .price > .real {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .container .cart .product .quantity {
+    min-width: 120px;
+  }
+  /**** Resumen ****/
+  .container .cart .resumen {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--color-dark);
   }
 }
