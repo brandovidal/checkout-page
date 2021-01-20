@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Ready!!");
   getCountries();
 
-  // const button = document.querySelector('#formCheckout')
   const form = document.forms["formCheckout"];
   form.addEventListener("submit", save);
 
-  // const phone = form["txtPhone"];
-  // phone.addEventListener("input", setInput);
-  // console.log('button ', button.submit())
+  const button = document.querySelector("#btnSave");
+  const country = form["selCountry"];
+  country.addEventListener("change", function () {
+    button.click();
+  });
 });
 
 async function getCountries() {
@@ -38,13 +38,61 @@ function save(e) {
     txtPostal,
   } = e.target;
 
-  validate(txtEmail, "#errorEmail", "Enter your email");
-  validate(txtPhone, "#errorPhone", "Enter your phone");
-  validate(txtName, "#errorName", "Enter your name");
-  validate(txtAddress, "#errorAddress", "Enter your adress");
-  validate(txtCity, "#errorCity", "Enter your city");
-  validate(selCountry, "#errorCountry", "Enter your country");
-  validate(txtPostal, "#errorPostal", "Enter your postal code");
+  const validates = [
+    {
+      control: txtEmail,
+      error: "#errorEmail",
+      message: "Enter your email",
+      validate: false,
+    },
+    {
+      control: txtPhone,
+      error: "#errorPhone",
+      message: "Enter your phone",
+      validate: false,
+    },
+    {
+      control: txtName,
+      error: "#errorName",
+      message: "Enter your name",
+      validate: false,
+    },
+    {
+      control: txtAddress,
+      error: "#errorAddress",
+      message: "Enter your adress",
+      validate: false,
+    },
+    {
+      control: txtCity,
+      error: "#errorCity",
+      message: "Enter your city",
+      validate: false,
+    },
+    {
+      control: selCountry,
+      error: "#errorCountry",
+      message: "Enter your country",
+      validate: false,
+    },
+    {
+      control: txtPostal,
+      error: "#errorPostal",
+      message: "Enter your postal code",
+      validate: false,
+    },
+  ];
+
+  validates.map(validate);
+
+  const validatesAll = validates.filter((line) => line.validate).length === validates.length;
+  // const validatesAll = true;
+  console.info("save:validatesAll ", validatesAll);
+
+  if (!validatesAll) {
+    return;
+  }
+  document.querySelector("#btnAlert").click();
 
   const values = {
     email: txtEmail.value,
@@ -58,32 +106,40 @@ function save(e) {
   console.log("save:values ", values);
 }
 
+function validate(line) {
+  const { control = "", error = "", message = "" } = line;
+  // console.log('validate:control ', control, this)
+  if (control && !control?.value) {
+    shownError(error, message);
+    line.validate = false;
+  } else {
+    shownError(error);
+    line.validate = true;
+  }
+}
+
 function shownError(name = "", message = "") {
   small = document.querySelector(name);
   small.innerHTML = message;
 }
 
-function validate(control = "", small = "", message = "") {
-  // console.log('validate:control ', control, control.value)
-  if (control && !control.value) {
-    shownError(small, message);
-    return;
-  }
-  shownError(small);
-}
-
 function setInput() {
   const { value, oldValue } = this;
-  if (onlyNumbers(value)) {
-    this.oldValue = value;
-    this.oldSelectionStart = this.selectionStart;
-    this.oldSelectionEnd = this.selectionEnd;
-  } else if (this.hasOwnProperty("oldValue")) {
-    this.value = oldValue;
-    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-  } else {
-    this.value = "";
-  }
+  console.info("setInput ", value, oldValue);
+  console.info("setInput:hasOwnProperty ", this.hasOwnProperty("oldValue"));
+  // const only = onlyNumbers(value)
+  // console.info('setInput:only ', only)
+
+  // if (only) {
+  //   this.oldValue = value;
+  //   this.oldSelectionStart = this.selectionStart;
+  //   this.oldSelectionEnd = this.selectionEnd;
+  // } else if (this.hasOwnProperty("oldValue")) {
+  //   this.value = oldValue;
+  //   this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+  // } else {
+  //   this.value = "";
+  // }
 }
 
 function onlyNumbers(value) {

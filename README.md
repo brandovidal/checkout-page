@@ -75,10 +75,11 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - [x] User story: I can select at least 3 countries from the dropdown
 
-- [ ] User story: When I click submit button or press enter, I can see a warning if validation fails
+- [x] User story: When I click submit button or press enter, I can see a warning if validation fails
 
-- [ ] User story: When I click submit button or press enter, I can see a successful alert if validation succeeds
+- [x] User story: When I click submit button or press enter, I can see a successful alert if validation succeeds
 
+- [ ] User story: When input check "Save this information for next time", save data in Local Storage
 
 ## How To Use
 

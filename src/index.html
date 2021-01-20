@@ -39,7 +39,9 @@
                 <input
                   id="txtEmail"
                   type="email"
-                  autocomplete="new-password"
+                  minlength="1"
+                  maxlength="50"
+                  autocomplete="new-email"
                   placeholder="Enter your email..."
                 />
               </div>
@@ -53,11 +55,11 @@
                   id="txtPhone"
                   type="tel"
                   minlength="1"
-                  maxlength="12"
+                  maxlength="15"
                   autocomplete="new-password"
                   placeholder="Enter your phone..."
-                  oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
                 />
+                <!-- oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');" -->
               </div>
               <small class="text-danger" id="errorPhone"></small>
             </div>
@@ -71,6 +73,8 @@
                 <input
                   id="txtName"
                   type="text"
+                  minlength="1"
+                  maxlength="50"
                   autocomplete="new-password"
                   placeholder="Rodney Cotton"
                 />
@@ -84,6 +88,8 @@
                 <input
                   id="txtAddress"
                   type="text"
+                  minlength="1"
+                  maxlength="50"
                   autocomplete="new-password"
                   placeholder="Your address.."
                 />
@@ -97,6 +103,8 @@
                 <input
                   id="txtCity"
                   type="text"
+                  minlength="1"
+                  maxlength="50"
                   autocomplete="new-password"
                   placeholder="Your city.."
                 />
@@ -129,8 +137,11 @@
                   <input
                     id="txtPostal"
                     type="tel"
+                    minlength="1"
+                    maxlength="10"
                     autocomplete="new-password"
                     placeholder="Your postal code.."
+                    oninput="this.value = this.value.replace(/[^a-z0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
                   />
                 </div>
                 <small class="text-danger" id="errorPostal"></small>
@@ -139,11 +150,11 @@
             <div class="full group">
               <div>
                 <input type="checkbox" id="chkSave" />
-                <label>Save this information for next time</label>
+                <label for="chkSave">Save this information for next time</label>
               </div>
             </div>
             <div class="full justify-end">
-              <button type="submit">Continue</button>
+              <button id="btnSave" type="submit">Continue</button>
             </div>
           </div>
         </form>
@@ -202,3 +213,13 @@
     <script src="./index.js"></script>
   </body>
 </html>
+
+<a id="btnAlert" class="hidden" rel="nofollow" href="#alert">alert</a>
+
+<div id="alert" class="overlay">
+  <div class="popup">
+    <h2>Checkout Page</h2>
+    <div class="content">Your order was sent correctly</div>
+    <a class="close-button" href="/">OK</a>
+  </div>
+</div>
