@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://white-bubble.surge.sh">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/brandovidal/checkout-page">
       Solution
     </a>
     <span> | </span>
@@ -38,12 +38,18 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+*Screenshot laptop*
+
+![screenshot](./src/assets/screenshoots/checkout-page.png)
+
+*Screenshot mobile*
+
+![screenshot](./src/assets/screenshoots/checkout-page-mobile.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 - Where can I see your demo?
-  [Live demo](https://plucky-cover.surge.sh)
+  [Live demo](https://white-bubble.surge.sh)
 
 - What was your experience?
   I feel gratifying to be able to solve this challenge.
@@ -71,7 +77,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - [x] User story: I can input email, phone, full name, address, city, country, and postal code
 
-- [ ] User story: I can input the number of items
+- [x] User story: I can input the number of items
 
 - [x] User story: I can select at least 3 countries from the dropdown
 
@@ -79,7 +85,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - [x] User story: When I click submit button or press enter, I can see a successful alert if validation succeeds
 
-- [ ] User story: When input check "Save this information for next time", save data in Local Storage
+- [x] User story: When input check "Save this information for next time", save data in Local Storage
 
 ## How To Use
 

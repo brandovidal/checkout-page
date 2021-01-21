@@ -55,11 +55,11 @@
                   id="txtPhone"
                   type="tel"
                   minlength="1"
-                  maxlength="15"
+                  maxlength="12"
                   autocomplete="new-password"
                   placeholder="Enter your phone..."
+                  oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
                 />
-                <!-- oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');" -->
               </div>
               <small class="text-danger" id="errorPhone"></small>
             </div>
@@ -167,13 +167,17 @@
               <div class="product">
                 <div class="name">Vintage Backbag</div>
                 <div class="price">
-                  <div class="ofert">$54.99</div>
+                  <div class="ofert">$<span class="value">54.99</span></div>
                   <div class="real">$94.99</div>
                 </div>
                 <div class="quantity">
-                  <button type="button" class="secondary">-</button>
-                  <div class="counter">1</div>
-                  <button type="button" class="secondary">+</button>
+                  <button id="btnMinus1" type="button" class="secondary">
+                    -
+                  </button>
+                  <label id="counter1" class="counter">1</label>
+                  <button id="btnSum1" type="button" class="secondary">
+                    +
+                  </button>
                 </div>
               </div>
             </div>
@@ -184,25 +188,29 @@
               <div class="product">
                 <div class="name">Levi Shoes</div>
                 <div class="price">
-                  <div class="ofert">$74.99</div>
+                  <div class="ofert">$<span class="value">74.99</span></div>
                   <div class="real">$124.99</div>
                 </div>
                 <div class="quantity">
-                  <button type="button" class="secondary">-</button>
-                  <div class="counter">1</div>
-                  <button type="button" class="secondary">+</button>
+                  <button id="btnMinus2" type="button" class="secondary">
+                    -
+                  </button>
+                  <label id="counter2" class="counter">1</label>
+                  <button id="btnSum2" type="button" class="secondary">
+                    +
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div class="resumen">
-            <div class="item shipping">
+            <div class="item">
               <label>Shipping</label>
-              <div class="cost">$19</div>
+              <div class="cost">$<span class="shipping">19</span></div>
             </div>
-            <div class="item total">
+            <div class="item">
               <label>Total</label>
-              <div class="cost">$148.98</div>
+              <div class="cost">$<span class="total">148.98</span></div>
             </div>
           </div>
         </article>
@@ -220,6 +228,6 @@
   <div class="popup">
     <h2>Checkout Page</h2>
     <div class="content">Your order was sent correctly</div>
-    <a class="close-button" href="/">OK</a>
+    <a class="close-button" href="#">OK</a>
   </div>
 </div>
